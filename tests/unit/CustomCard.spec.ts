@@ -16,6 +16,13 @@ describe("CustomCard.vue", () => {
     expect(wrapper.vm.$data.show).toBe(false);
   });
 
+  it("should hide details when rendered", async () => {
+    const wrapper = mount(CustomCard, { localVue, vuetify });
+    const details = wrapper.find(".v-card__text");
+
+    expect(details.isVisible()).toBe(false);
+  });
+
   it("should show details when icon button clicked", async () => {
     const wrapper = mount(CustomCard, { localVue, vuetify });
 
